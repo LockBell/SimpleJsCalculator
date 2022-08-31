@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2" style="text-align: center">
+                <h3>JS간단계산기</h3>
+            </td>
+        </tr>
+        <tr>
+            <th>숫자1</th>
+            <td><input type="text" id="num2"></td>
+        </tr>
+        <tr>
+            <th>숫자2</th>
+            <td><input type="text" id="num1"></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button onclick="cal('btn1')">+</button>
+                <button onclick="cal('btn2')">-</button>
+                <button onclick="cal('btn3')">*</button>
+                <button onclick="cal('btn4')">/</button>    
+            </th>
+        </tr>
+        <tr>
+            <th>계산 결과</th>
+            <td><input type="text" id="result"/></td>
+        </tr>
+    </table>
+    <script>
+        function cal(id) {
+            const result = document.querySelector("#result");
+            const n1 = document.querySelector("#num1");
+            const n2 = document.querySelector("#num2");
+            const num1 = Number(n1.value);
+            const num2 = Number(n2.value);
+            
+            let v = 0
+            if(id === "btn1") v = num1 + num2
+            else if(id === "btn2") v = num1 - num2;
+            else if(id === "btn4") v = num1 / num2;
+            else v = num1 * num2;
+            result.value = v
+        }
+    </script>
+</body>
+</html>
